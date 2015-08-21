@@ -12,7 +12,7 @@ func TestIsAllowURLString(t *testing.T) {
 		t.Error(url + " is not a allow url.")
 	}
 
-	url = "https://www.google.com/a"
+	url = "https://www.google.com/about/"
 	if !r.IsAllowURLString("*", url) {
 		t.Error(url + " is a allow url.")
 	}

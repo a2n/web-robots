@@ -53,12 +53,13 @@ func (r *Robots) IsAllowURL(ua string, u *url.URL) bool {
 		ua = "*"
 	}
 
+	result := true
 	for k, v := range r.hosts[host][ua] {
 		if strings.Index(u.Path, k) == 0 {
-			return v
+			result = v
 		}
 	}
-	return true
+	return result
 }
 
 func (r *Robots) get(host string) error {
